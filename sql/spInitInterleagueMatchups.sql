@@ -145,7 +145,59 @@ BEGIN
         (2017, 12, 7, 9, @espnDivisionId, @yahooDivisionId),
         (2017, 12, 1, 6, @espnDivisionId, @yahooDivisionId),
         (2017, 12, 8, 10, @espnDivisionId, @yahooDivisionId),
-        (2017, 12, 6, 5, @espnDivisionId, @yahooDivisionId);
+        (2017, 12, 6, 5, @espnDivisionId, @yahooDivisionId),
+
+        -- Week 3 Inter-league matchups 2018
+        -- Yahoo is home
+        (2018, 3, 4, 6, @yahooDivisionId, @espnDivisionId),
+        (2018, 3, 5, 10, @yahooDivisionId, @espnDivisionId),
+        (2018, 3, 9, 4, @yahooDivisionId, @espnDivisionId),
+        (2018, 3, 3, 5, @yahooDivisionId, @espnDivisionId),
+        (2018, 3, 2, 7, @yahooDivisionId, @espnDivisionId),
+        (2018, 3, 8, 2, @yahooDivisionId, @espnDivisionId),
+        (2018, 3, 10, 9, @yahooDivisionId, @espnDivisionId),
+        (2018, 3, 6, 8, @yahooDivisionId, @espnDivisionId),
+        (2018, 3, 7, 3, @yahooDivisionId, @espnDivisionId),
+        (2018, 3, 1, 1, @yahooDivisionId, @espnDivisionId),
+
+        -- Week 6 Inter-league matchups 2018
+        -- ESPN is home
+        (2018, 6, 4, 10, @espnDivisionId, @yahooDivisionId),
+        (2018, 6, 5, 6, @espnDivisionId, @yahooDivisionId),
+        (2018, 6, 9, 5, @espnDivisionId, @yahooDivisionId),
+        (2018, 6, 3, 4, @espnDivisionId, @yahooDivisionId),
+        (2018, 6, 2, 2, @espnDivisionId, @yahooDivisionId),
+        (2018, 6, 8, 7, @espnDivisionId, @yahooDivisionId),
+        (2018, 6, 10, 8, @espnDivisionId, @yahooDivisionId),
+        (2018, 6, 6, 9, @espnDivisionId, @yahooDivisionId),
+        (2018, 6, 7, 1, @espnDivisionId, @yahooDivisionId),
+        (2018, 6, 1, 3, @espnDivisionId, @yahooDivisionId),
+
+        -- Week 9 Inter-league matchups 2018
+        -- Yahoo is home
+        (2018, 9, 4, 4, @yahooDivisionId, @espnDivisionId),
+        (2018, 9, 5, 5, @yahooDivisionId, @espnDivisionId),
+        (2018, 9, 9, 7, @yahooDivisionId, @espnDivisionId),
+        (2018, 9, 3, 2, @yahooDivisionId, @espnDivisionId),
+        (2018, 9, 2, 9, @yahooDivisionId, @espnDivisionId),
+        (2018, 9, 8, 8, @yahooDivisionId, @espnDivisionId),
+        (2018, 9, 10, 3, @yahooDivisionId, @espnDivisionId),
+        (2018, 9, 6, 1, @yahooDivisionId, @espnDivisionId),
+        (2018, 9, 7, 6, @yahooDivisionId, @espnDivisionId),
+        (2018, 9, 1, 10, @yahooDivisionId, @espnDivisionId),
+
+        -- Week 12 Inter-league matchups 2018
+        -- ESPN is home
+        (2018, 12, 4, 5, @yahooDivisionId, @espnDivisionId),
+        (2018, 12, 5, 4, @yahooDivisionId, @espnDivisionId),
+        (2018, 12, 9, 2, @yahooDivisionId, @espnDivisionId),
+        (2018, 12, 3, 7, @yahooDivisionId, @espnDivisionId),
+        (2018, 12, 2, 8, @yahooDivisionId, @espnDivisionId),
+        (2018, 12, 8, 9, @yahooDivisionId, @espnDivisionId),
+        (2018, 12, 10, 1, @yahooDivisionId, @espnDivisionId),
+        (2018, 12, 6, 3, @yahooDivisionId, @espnDivisionId),
+        (2018, 12, 7, 10, @yahooDivisionId, @espnDivisionId),
+        (2018, 12, 1, 6, @yahooDivisionId, @espnDivisionId);
 
     -- Purge previous records from the year being updated
     DELETE FROM tblInterleagueMatchups WHERE seasonId = season;
