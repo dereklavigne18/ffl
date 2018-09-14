@@ -20,8 +20,8 @@ BEGIN
 	    t.id,
         t.location,
         t.nickname,
-        CASE WHEN (t.id = m.homeTeamId) THEN m.homeTeamPoints ELSE m.awayTeamPoints END AS pointsFor,
-        CASE WHEN (t.id = m.homeTeamId) THEN m.awayTeamPoints ELSE m.homeTeamPoints END AS pointsAgainst
+        CASE WHEN (t.id = m.homeTeamId) THEN ROUND(m.homeTeamPoints, 1) ELSE ROUND(m.awayTeamPoints, 1) END AS pointsFor,
+        CASE WHEN (t.id = m.homeTeamId) THEN ROUND(m.awayTeamPoints, 1) ELSE ROUND(m.homeTeamPoints, 1) END AS pointsAgainst
 	FROM tblTeam t
 	INNER JOIN tblMatchup m ON t.id = m.homeTeamId OR t.id = m.awayTeamId
 	INNER JOIN tblSeason s ON s.id = t.seasonId
@@ -35,8 +35,8 @@ BEGIN
 	    SUM(CASE WHEN pointsFor > pointsAgainst THEN 1 ELSE 0 END) AS wins,
 	    SUM(CASE WHEN pointsFor < pointsAgainst THEN 1 ELSE 0 END) AS losses,
 	    SUM(CASE WHEN pointsFor = pointsAgainst THEN 1 ELSE 0 END) AS ties,
-	    ROUND(SUM(pointsFor), 2) AS pointsFor,
-	    ROUND(SUM(pointsAgainst), 2) AS pointsAgainst
+	    ROUND(SUM(pointsFor), 1) AS pointsFor,
+	    ROUND(SUM(pointsAgainst), 1) AS pointsAgainst
 	FROM tblTempStandings
     GROUP BY id, location, nickname
     ORDER BY wins DESC, ties DESC, pointsFor DESC;
